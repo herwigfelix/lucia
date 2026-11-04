@@ -1,0 +1,78 @@
+# ---------------------------------------------------------------------------
+# lucia — .gitignore
+#
+# Im Repository liegen nur Quelltext, Doku, Beispiele und Tests.
+# Alles andere wird gebaut, erzeugt oder ist geheim.
+# ---------------------------------------------------------------------------
+
+# --------------------------------------------------------------------- Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyd
+.Python
+
+# Paketbau (setup.py/pyproject) und PyInstaller/Nuitka
+build/
+dist/
+wheels/
+*.egg-info/
+*.egg
+.eggs/
+pip-wheel-metadata/
+*.spec.bak
+*.manifest
+
+# Virtuelle Umgebungen
+.venv/
+venv/
+env/
+ENV/
+.conda/
+
+# Tests und Werkzeuge
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.hypothesis/
+
+# ----------------------------------------------------------------- Geheimnisse
+# API-Schlüssel und Anmeldedaten
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*_api_key.txt
+credentials.json
+auth.json
+secrets/
+
+# -------------------------------------------------------------- Laufzeitdaten
+*.log
+*.sqlite
+*.sqlite3
+*.db
+
+# --------------------------------------------------------- Betriebssystem/IDE
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*~
+
+# Claude/Codex-Arbeitsdateien
+.claude/

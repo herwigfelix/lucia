@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lucia"
+version = "2.0.0"
+description = "An audio game engine written in Python"
+readme = "README.md"
+license = { text = "LGPL-3.0-only" }
+authors = [{ name = "LuciaSoftware and contributors" }]
+requires-python = ">=3.10"
+dependencies = [
+	"pygame-ce>=2.5",
+	"prismatoid>=0.17",
+	"miniaudio>=1.61",
+	"numpy>=1.24",
+	"pycryptodomex>=3.19",
+	# the single-instance checker uses pywin32 on Windows; lucia imports
+	# without it (it degrades gracefully), but a normal install pulls it in
+	"pywin32>=306; sys_platform == 'win32'",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.scripts]
+lucia = "lucia.cli:main"
+lucia-packer = "lucia.cli.packer:main"
+
+[project.urls]
+Homepage = "https://github.com/herwigfelix/lucia"
+
+[tool.setuptools.packages.find]
+include = ["lucia*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
